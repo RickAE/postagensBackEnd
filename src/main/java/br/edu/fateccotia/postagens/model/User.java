@@ -14,17 +14,17 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idUser;
 	private String email;
-	private String pwd;
+	private String senha;
 	private String nick;
 	private String picture;
 	private String status;
 	
 	
 	
-	public User(int idUser, String email, String pwd, String nick, String picture, String status) {
+	public User(int idUser, String email, String senha, String nick, String picture, String status) {
 		this.idUser = idUser;
 		this.email = email;
-		this.pwd = pwd;
+		this.senha = senha;
 		this.nick = nick;
 		this.picture = picture;
 		this.status = status;
@@ -54,15 +54,6 @@ public class User {
 		this.email = email;
 	}
 	
-	public String getPwd() {
-		
-		return pwd;
-	}
-	
-	public void setPwd(String pwd) {
-		
-		this.pwd = pwd;
-	}
 	
 	public String getNick() {
 		
@@ -92,6 +83,14 @@ public class User {
 	public void setStatus(String status) {
 		
 		this.status = status;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
 	

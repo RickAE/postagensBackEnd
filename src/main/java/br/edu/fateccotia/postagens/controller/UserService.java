@@ -25,4 +25,11 @@ public class UserService {
 		return userRepository.findById(id);
 	}
 	
+	public Optional<User> findByEmailAndSenha(String email, String senha) {
+		
+		return userRepository.findByEmailAndSenha(email,senha);
+		
+	}
+	
+	
 }

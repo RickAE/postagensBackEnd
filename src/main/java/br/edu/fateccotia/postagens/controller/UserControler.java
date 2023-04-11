@@ -22,10 +22,25 @@ public class UserControler {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<Optional<User>> getById(@PathVariable Integer id) {
+//	@GetMapping("/{id}")
+//	public ResponseEntity<Optional<User>> getById(@PathVariable Integer id) {
+//		
+//		Optional<User> user = userService.getById(id);
+//		if(user.isPresent()) {
+//			return ResponseEntity.ok(user);
+//		}
+//		
+//		else {
+//			return ResponseEntity.notFound().build();
+//		}
+//		
+//	}
+	
+	@GetMapping("/{email}/{senha}")
+	public ResponseEntity<Optional<User>> findByEmailAndSenha(@PathVariable String email, @PathVariable String senha) {
 		
-		Optional<User> user = userService.getById(id);
+		Optional<User> user = userService.findByEmailAndSenha(email,senha);
+		
 		if(user.isPresent()) {
 			return ResponseEntity.ok(user);
 		}
